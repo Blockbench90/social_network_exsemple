@@ -15,7 +15,9 @@
     text-decoration: none;
     color: darkgreen;
 }
-
+.active {
+    color: white;
+}
 .messages {
     margin-left: 40px;
 }
