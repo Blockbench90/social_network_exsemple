@@ -18,6 +18,7 @@ const App = () => {
                     <Navbar/>
                 </div>
                 <div className="AppProfile">
+                    <Route path='/' exact component={() => <ProfilePage/>}/>
                     <Route path='/profile' render={() => <ProfilePage/>}/>
                     <Route path='/dialogs' component={() => <Dialogs/>}/>
                     <Route path='/users' component={() => <Users/>}/>
