@@ -5,9 +5,15 @@
     display: flex;
     text-decoration: none;
 }
+.DialogUser {
+    font-size: 19px;
+    font-weight: 500;
+
+}
 .dialog a{
     margin-left: 40px;
     text-decoration: none;
+    color: darkgreen;
 }
 
 .messages {
