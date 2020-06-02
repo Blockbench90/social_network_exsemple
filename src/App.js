@@ -8,7 +8,7 @@ import Dialogs from "./components/Profile/Message/Dialogs";
 import Users from "./components/Profile/Users/Users";
 
 
-const App = () => {
+const App = (props) => {
     return (
             <div className="AppWrapper">
                 <div className="AppHeader">
@@ -18,9 +18,9 @@ const App = () => {
                     <Navbar/>
                 </div>
                 <div className="AppProfile">
-                    <Route path='/' exact component={() => <ProfilePage/>}/>
-                    <Route path='/profile' render={() => <ProfilePage/>}/>
-                    <Route path='/dialogs' component={() => <Dialogs/>}/>
+                    <Route path='/' exact component={() => <ProfilePage posts={props.posts}/>}/>
+                    <Route path='/profile' render={() => <ProfilePage posts={props.posts}/>}/>
+                    <Route path='/dialogs' component={() => <Dialogs dialogs={props.dialogs} messageData={props.messageData}/>}/>
                     <Route path='/users' component={() => <Users/>}/>
                 </div>
             </div>

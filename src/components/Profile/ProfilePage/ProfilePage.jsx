@@ -24,7 +24,7 @@ const ProfilePage = (props) => {
             <div className={style.Container}>
                 <ProfileInfo/>
                 <div className={style.MyPostsWrapper}>
-                    <MyPost/>
+                    <MyPost posts={props.posts}/>
                 </div>
             </div>
         </div>

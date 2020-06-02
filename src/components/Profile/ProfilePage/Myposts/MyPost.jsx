@@ -4,11 +4,7 @@ import avatar from "../../../../assets/images/logo.svg"
 import Post from "./Post/Post";
 
 const MyPost = (props) => {
-    let posts = [
-        {id: 1, post:'It is props from first message'},
-        {id: 2, post:'It is props from second message'}
-    ]
-    let post = posts.map(p => <Post message={p.post}/>)
+    let post = props.posts.map(p => <Post message={p.post}/>)
     return (
         <div className={style.Wrapper}>
             <div className={style.Container}>
