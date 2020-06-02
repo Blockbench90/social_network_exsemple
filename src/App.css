@@ -1,0 +1,38 @@
+.AppWrapper {
+    display: grid;
+    grid-template-areas: "h h" "n p";
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 8fr;
+    max-width: 1130px;
+    max-height: 100%;
+    margin: 0 auto;
+    grid-gap: 10px;
+}
+.AppHeader {
+    grid-area: h;
+    background: rgba(120, 192, 192, 1);
+
+}
+.AppNavbar {
+    grid-area: n;
+    height: 800px;
+    min-height: 110%;
+    background: rgba(59, 149, 201, 0.9);
+}
+.AppProfile {
+    grid-area: p;
+    background: rgba(43, 171, 213, 1);
+    height: 800px;
+    min-height: 110%;
+}
+
+
+
+
+
+
+
+
+
+
+

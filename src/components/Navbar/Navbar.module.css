@@ -1,0 +1,16 @@
+.Container {
+    margin: 50px 0 0 40px;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.Container a{
+    text-decoration: none;
+    color: white;
+}
+.Container a:active {
+    font-weight: bold;
+}
+.Container a.ActiveLink {
+    color: brown;
+}
