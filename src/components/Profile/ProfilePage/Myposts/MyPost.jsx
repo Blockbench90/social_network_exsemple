@@ -4,7 +4,13 @@ import avatar from "../../../../assets/images/logo.svg"
 import Post from "./Post/Post";
 
 const MyPost = (props) => {
+    debugger;
     let post = props.posts.map(p => <Post message={p.post}/>)
+    let newPostText = React.createRef();
+    let addPost = (newPost) => {
+        let text = newPostText.current.value;
+        props.addPost(text);
+    }
     return (
         <div className={style.Wrapper}>
             <div className={style.Container}>
@@ -13,8 +19,8 @@ const MyPost = (props) => {
                         <img className={style.Avatar} src={avatar} alt='logo'/>
                     </div>
                     <div className={style.Input}>
-                        <textarea rows="1" cols="50"/>
-                        <button>Add Post</button>
+                        <textarea rows="1" cols="50" ref={newPostText}/>
+                        <button onClick={addPost}>Add Post</button>
                     </div>
                 </div>
                 <div className={style.Post}>

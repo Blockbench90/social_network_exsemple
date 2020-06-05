@@ -18,9 +18,9 @@ const App = (props) => {
                     <Navbar/>
                 </div>
                 <div className="AppProfile">
-                    <Route path='/' exact component={() => <ProfilePage posts={props.posts}/>}/>
-                    <Route path='/profile' render={() => <ProfilePage posts={props.posts}/>}/>
-                    <Route path='/dialogs' component={() => <Dialogs dialogs={props.dialogs} messageData={props.messageData}/>}/>
+                    <Route path='/' exact component={() => <ProfilePage state={props.state} addPost={props.addPost}/>}/>
+                    <Route path='/profile' render={() => <ProfilePage state={props.state}/>} addPost={props.addPost}/>
+                    <Route path='/dialogs' component={() => <Dialogs dialogsPage={props.state.dialogPage}/>}/>
                     <Route path='/users' component={() => <Users/>}/>
                 </div>
             </div>

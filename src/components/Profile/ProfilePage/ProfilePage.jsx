@@ -24,7 +24,7 @@ const ProfilePage = (props) => {
             <div className={style.Container}>
                 <ProfileInfo/>
                 <div className={style.MyPostsWrapper}>
-                    <MyPost posts={props.posts}/>
+                    <MyPost posts={props.state.profilePage.posts} addPost={props.addPost}/>
                 </div>
             </div>
         </div>
