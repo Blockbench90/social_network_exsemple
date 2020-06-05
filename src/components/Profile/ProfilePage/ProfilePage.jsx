@@ -2,6 +2,7 @@ import React from "react";
 import style from "./ProfilePage.module.css";
 import MyPost from "./Myposts/MyPost";
 import avatarProfile from "../../../assets/images/logo.svg"
+import {updateNewPostText} from "../../../redux/state";
 
 let ProfileInfo = (props) => {
     return (
@@ -24,7 +25,7 @@ const ProfilePage = (props) => {
             <div className={style.Container}>
                 <ProfileInfo/>
                 <div className={style.MyPostsWrapper}>
-                    <MyPost posts={props.state.profilePage.posts} addPost={props.addPost}/>
+                    <MyPost newPostText={props.newPostText} updateNewPostText={props.updateNewPostText} posts={props.state.profilePage.posts} addPost={props.addPost}/>
                 </div>
             </div>
         </div>

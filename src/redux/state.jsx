@@ -3,9 +3,10 @@ import {rerenderEntireTree} from "../rerender";
 let state = {
     profilePage: {
         posts: [
-            {id: 1, post:'It is props from first message'},
-            {id: 2, post:'It is props from second message'}
-        ]
+            {id: 1, post: 'It is props from first message'},
+            {id: 2, post: 'It is props from second message'}
+        ],
+        newPostText: 'Input your text...'
     },
     dialogPage: {
         dialogs: [
@@ -23,12 +24,18 @@ let state = {
         ]
     }
 }
-export let addPost = (newPostText) => {
+export let addPost = () => {
     let newPost = {
         id: 3,
-        post: newPostText
+        post: state.profilePage.newPostText
     };
     state.profilePage.posts.push(newPost);
+    state.profilePage.newPostText = '';
     rerenderEntireTree(state);
 }
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    rerenderEntireTree(state)
+}
+
 export default state;
