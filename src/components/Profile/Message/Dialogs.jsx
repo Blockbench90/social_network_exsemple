@@ -15,6 +15,7 @@ let Message = (props) => {
 }
 
 const Dialogs = (props) => {
+    debugger;
     let dialog = props.dialogsPage.dialogs.map(d => <Dialog name={d.name} id={d.id}/>)
     let message = props.dialogsPage.messages.map( m => <Message message={m.message}/> )
     let newMessage = React.createRef();

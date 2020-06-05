@@ -4,12 +4,12 @@ import avatar from "../../../../assets/images/logo.svg"
 import Post from "./Post/Post";
 
 const MyPost = (props) => {
-    debugger;
     let post = props.posts.map(p => <Post message={p.post}/>)
     let newPostText = React.createRef();
     let addPost = (newPost) => {
         let text = newPostText.current.value;
         props.addPost(text);
+        newPostText.current.value = '';
     }
     return (
         <div className={style.Wrapper}>
