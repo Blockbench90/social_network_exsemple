@@ -20,13 +20,11 @@ const App = (props) => {
             </div>
             <div className="AppProfile">
                 <Route path='/' exact component={() => <ProfilePage newPostText={props.state.profilePage.newPostText}
-                                                                    updateNewPostText={props.updateNewPostText}
-                                                                    state={props.state}
-                                                                    addPost={props.addPost}/>}/>
+                                                                    dispatch={props.dispatch}
+                                                                    state={props.state}/>}/>
                 <Route path='/profile' render={() => <ProfilePage newPostText={props.state.profilePage.newPostText}
-                                                                  updateNewPostText={props.updateNewPostText}
-                                                                  state={props.state}/>}
-                                                                    addPost={props.addPost}/>
+                                                                  dispatch={props.dispatch}
+                                                                  state={props.state}/>}/>
                 <Route path='/dialogs' component={() => <Dialogs dialogsPage={props.state.dialogPage}/>}/>
                 <Route path='/users' component={() => <Users/>}/>
             </div>

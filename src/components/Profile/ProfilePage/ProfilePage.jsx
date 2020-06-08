@@ -20,12 +20,13 @@ let ProfileInfo = (props) => {
 }
 
 const ProfilePage = (props) => {
+    debugger;
     return (
         <div className={style.ProfilePageWrapper}>
             <div className={style.Container}>
                 <ProfileInfo/>
                 <div className={style.MyPostsWrapper}>
-                    <MyPost newPostText={props.newPostText} updateNewPostText={props.updateNewPostText} posts={props.state.profilePage.posts} addPost={props.addPost}/>
+                    <MyPost dispatch={props.dispatch} newPostText={props.newPostText} posts={props.state.profilePage.posts}/>
                 </div>
             </div>
         </div>
