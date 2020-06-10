@@ -2,7 +2,7 @@ import React from "react";
 import style from "./ProfilePage.module.css";
 import MyPost from "./Myposts/MyPost";
 import avatarProfile from "../../../assets/images/logo.svg"
-import {updateNewPostText} from "../../../redux/state";
+import {updateNewPostText} from "../../../redux/old-state";
 
 let ProfileInfo = (props) => {
     return (
