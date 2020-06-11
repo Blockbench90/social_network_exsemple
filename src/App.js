@@ -4,8 +4,8 @@ import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import ProfilePage from "./components/Profile/ProfilePage/ProfilePage";
 import {Route} from "react-router-dom";
-import Dialogs from "./components/Profile/Message/Dialogs";
 import Users from "./components/Profile/Users/Users";
+import DialogsContainer from "./components/Profile/Message/DialogsContainer";
 
 
 const App = (props) => {
@@ -19,14 +19,9 @@ const App = (props) => {
                 <Navbar/>
             </div>
             <div className="AppProfile">
-                <Route path='/' exact component={() => <ProfilePage newPostText={props.state.profilePage.newPostText}
-                                                                    dispatch={props.dispatch}
-                                                                    state={props.state}/>}/>
-                <Route path='/profile' render={() => <ProfilePage newPostText={props.state.profilePage.newPostText}
-                                                                  dispatch={props.dispatch}
-                                                                  state={props.state}/>}/>
-                <Route path='/dialogs' component={() => <Dialogs dispatch={props.dispatch}
-                                                                 dialogsPage={props.state.dialogPage}/>}/>
+                <Route path='/' exact component={() => <ProfilePage store={props.store}/>}/>
+                <Route path='/profile' render={() => <ProfilePage store={props.store}/>}/>
+                <Route path='/dialogs' component={() => <DialogsContainer store={props.store}/>}/>
                 <Route path='/users' component={() => <Users/>}/>
             </div>
         </div>

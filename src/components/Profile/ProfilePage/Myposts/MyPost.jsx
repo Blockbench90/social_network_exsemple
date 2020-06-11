@@ -2,18 +2,17 @@ import React from "react";
 import style from "./MyPost.module.css";
 import avatar from "../../../../assets/images/logo.svg"
 import Post from "./Post/Post";
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../../redux/profile-reducer";
 
 const MyPost = (props) => {
     let post = props.posts.map(p => <Post message={p.post}/>)
     let newPostText = React.createRef();
 
     let addPost = () => {
-        props.dispatch(addPostActionCreator());
+        props.addPost();
     }
     let onPostChange = () => {
         let text = newPostText.current.value;
-        props.dispatch(updateNewPostTextActionCreator(text))
+        props.onPostChange(text)
     }
     return (
         <div className={style.Wrapper}>
