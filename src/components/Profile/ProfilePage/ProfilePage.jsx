@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./ProfilePage.module.css";
-import MyPost from "./Myposts/MyPost";
 import ProfileInfo from "./ProfileInfo";
 import MyPostContainer from "./Myposts/MyPostContainer";
 

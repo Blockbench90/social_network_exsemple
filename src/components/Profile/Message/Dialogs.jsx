@@ -15,9 +15,9 @@ let Message = (props) => {
 }
 
 const Dialogs = (props) => {
-    let dialog = props.dialogsPage.dialogs.map(d => <Dialog name={d.name} id={d.id}/>)
-    let message = props.dialogsPage.messages.map( m => <Message message={m.message}/> )
-    let newMessageBody = props.dialogsPage.newMessageBody; // первоначальное значение value, пустая строка из state
+    let dialog = props.dialogs.map(d => <Dialog name={d.name} id={d.id}/>)
+    let message = props.messages.map( m => <Message message={m.message}/> )
+    let newMessageBody = props.newMessageBody; // первоначальное значение value, пустая строка из state
 
     let onNewMessageChange = (e) => {       // забрать значение при введении текста и присвоить его в state, через dispatch
         let body = e.target.value;

@@ -20,8 +20,8 @@ const App = (props) => {
             </div>
             <div className="AppProfile">
                 <Route path='/' exact component={() => <ProfilePage/>}/>
-                <Route path='/profile' render={() => <ProfilePage />}/>
-                <Route path='/dialogs' component={() => <DialogsContainer />}/>
+                <Route path='/profile' render={() => <ProfilePage/>}/>
+                <Route path='/dialogs' component={() => <DialogsContainer/>}/>
                 <Route path='/users' component={() => <Users/>}/>
             </div>
         </div>
