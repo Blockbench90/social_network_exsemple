@@ -19,9 +19,9 @@ const App = (props) => {
                 <Navbar/>
             </div>
             <div className="AppProfile">
-                <Route path='/' exact component={() => <ProfilePage store={props.store}/>}/>
-                <Route path='/profile' render={() => <ProfilePage store={props.store}/>}/>
-                <Route path='/dialogs' component={() => <DialogsContainer store={props.store}/>}/>
+                <Route path='/' exact component={() => <ProfilePage/>}/>
+                <Route path='/profile' render={() => <ProfilePage />}/>
+                <Route path='/dialogs' component={() => <DialogsContainer />}/>
                 <Route path='/users' component={() => <Users/>}/>
             </div>
         </div>
