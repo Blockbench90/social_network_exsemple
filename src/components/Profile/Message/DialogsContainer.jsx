@@ -8,7 +8,6 @@ let mapStateToProps = (state) => {
         dialogs: state.dialogPage.dialogs,
         messages: state.dialogPage.messages,
         newMessageBody: state.dialogPage.newMessageBody
-
     }
 }
 let mapDispatchToProps = (dispatch) => {
@@ -21,7 +20,6 @@ let mapDispatchToProps = (dispatch) => {
         }
     }
 }
-
 
 const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs)
 export default DialogsContainer;
