@@ -1,0 +1,11 @@
+.Wrapper {
+    background: rgba(43, 171, 213, 1);
+    height: 800px;
+    min-height: 100%;
+}
+.Wrapper img {
+    padding: 280px 0 0 280px;
+    margin: 0 0 0 0;
+    width: 300px;
+    height: 300px;
+}
