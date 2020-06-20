@@ -1,12 +1,14 @@
 const ADD_POST = 'ADD-POST'
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
+const SET_USER_PROFILE = 'SET-USER-PROFILE'
 // редбюсер -- это чистая функция, которая принимает стайт и экшен, если надо меняет стаей и возвращает новый
 let initialState = {
     posts: [
         {id: 1, post: 'It is props from first message'},
         {id: 2, post: 'It is props from second message'}
     ],
-    newPostText: 'Input your text...'
+    newPostText: 'Input your text...',
+    profile: null
 }
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -22,6 +24,10 @@ const profileReducer = (state = initialState, action) => {
             return {
                 ...state,
             newPostText: action.newText}
+        case SET_USER_PROFILE:
+            return {
+                ...state,
+            profile: action.profile}
         default:
             return state;
     }
@@ -29,4 +35,5 @@ const profileReducer = (state = initialState, action) => {
 
 export const addPostActionCreator = () => ({type: ADD_POST})
 export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text})
+export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 export default profileReducer;

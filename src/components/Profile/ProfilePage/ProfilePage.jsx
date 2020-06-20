@@ -8,7 +8,7 @@ const ProfilePage = (props) => {
     return (
         <div className={style.ProfilePageWrapper}>
             <div className={style.Container}>
-                <ProfileInfo/>
+                <ProfileInfo profile={props.profile}/>
                 <div className={style.MyPostsWrapper}>
                    <MyPostContainer/>
                 </div>

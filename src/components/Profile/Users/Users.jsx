@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./Users.module.css";
 import userPhoto from "../../../assets/images/user.png";
+import {NavLink} from "react-router-dom";
 
 
 const Users = (props) => {
@@ -22,7 +23,9 @@ const Users = (props) => {
                         {
                             props.users.map(user => <div key={user.id}>
                                 <div>
+                                    <NavLink to={"profile/" + user.id}>
                                     <img src={user.photos.small != null ? user.photos.small : userPhoto} className={style.userPhoto}/>
+                                    </NavLink>
                                     {/*если с API пришло photos.small, и оно не null, отобрази его, иначе отрисуй шаблонную фотку юзера, которую мы захардкодили импортом*/}
                                 </div>
                                 <div>
