@@ -12,8 +12,11 @@ const Header = (props) => {
                 <img src={logo} alt="logo"/>
                 </NavLink>
             </div>
-            <div>
-                <h2>sing in</h2>
+            <div className={style.Login}>
+                {props.isAuth ? props.login :
+                    <NavLink to={'/login'}>
+                        <h2>Login</h2>
+                    </NavLink>}
             </div>
         </div>
     </div>

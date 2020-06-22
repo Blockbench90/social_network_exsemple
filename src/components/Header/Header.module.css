@@ -3,10 +3,12 @@
     justify-content: space-between;
 }
 .HeaderContainer h2 {
-    margin-right: 50px;
     padding: 0px 5px 2px 5px;
     border: 1px solid #ffffff;
     border-radius: 10px;
+}
+.Login {
+    margin: 13px 47px 0 0;
 }
 .Logo img {
     padding: 5px;
