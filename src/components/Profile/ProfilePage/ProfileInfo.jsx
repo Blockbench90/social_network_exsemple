@@ -2,6 +2,7 @@ import style from "./ProfilePage.module.css";
 import avatarProfile from "../../../assets/images/logo.svg";
 import React from "react";
 import Preloader from "../../../common/Preloader/Preloader";
+import photo from "../../../assets/images/user.png"
 
 let ProfileInfo = (props) => {
     debugger;
@@ -14,7 +15,7 @@ let ProfileInfo = (props) => {
                 <img className={avatarProfile} src={avatarProfile} alt="logo"/>
             </div>
             <div className={style.Description}>
-                <img src={props.profile.photos.large}/>
+                <img src={props.profile.photos.large !=null ? props.profile.photos.large : photo}/>
                 <h1>{props.profile.aboutMe}</h1>
                 <h2>{props.profile.fullName}</h2>
             </div>

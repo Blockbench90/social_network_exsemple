@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./Dialogs.module.css"
-import {NavLink} from "react-router-dom";
+import {NavLink, Redirect} from "react-router-dom";
 
 let Dialog = (props) => {
     let path = "/dialogs/" + props.id
@@ -26,6 +26,7 @@ const Dialogs = (props) => {
     let onSendMessageClick = () => {                    //при клике на кнопку, запустить диспатчь, и перезаписать значение, а после занулить
         props.sendMessage()
     }
+    if(!props.isAuth) return <Redirect to='/login'/>
     return (
         <div className={style.Wrapper}>
             <div className={style.Container}>

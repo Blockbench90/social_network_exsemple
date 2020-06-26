@@ -1,5 +1,6 @@
 import {usersApi} from "../api";
 
+
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET-USERS';
