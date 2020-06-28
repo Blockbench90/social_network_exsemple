@@ -4,9 +4,9 @@ import React from "react";
 import Preloader from "../../../common/Preloader/Preloader";
 import photo from "../../../assets/images/user.png"
 import ProfileStatus from "./Myposts/ProfileStatus";
+import ProfilePage from "./ProfilePage";
 
-let ProfileInfo = (props) => {
-    debugger;
+const ProfileInfo = (props) => {
     if (!props.profile) {
         return <Preloader/>
     }
@@ -17,7 +17,7 @@ let ProfileInfo = (props) => {
             </div>
             <div className={style.Description}>
                 <img src={props.profile.photos.large !=null ? props.profile.photos.large : photo}/>
-                <ProfileStatus status={'Hello, i am pingvin'}/>
+                <ProfileStatus status={props.status} updateProfileStatus={props.updateProfileStatus}/>
                 <h1>{props.profile.aboutMe}</h1>
                 <h2>{props.profile.fullName}</h2>
             </div>

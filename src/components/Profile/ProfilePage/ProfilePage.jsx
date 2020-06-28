@@ -9,7 +9,7 @@ const ProfilePage = (props) => {
     return (
         <div className={style.ProfilePageWrapper}>
             <div className={style.Container}>
-                <ProfileInfo profile={props.profile}/>
+                <ProfileInfo profile={props.profile} status={props.status} updateProfileStatus={props.updateProfileStatus}/>
 
                 <div className={style.MyPostsWrapper}>
                    <MyPostContainer/>
