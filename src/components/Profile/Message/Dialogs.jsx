@@ -8,6 +8,7 @@ let Dialog = (props) => {
         <NavLink to={path}>{props.name}</NavLink>
     </div>
 }
+
 let Message = (props) => {
     return <div className={style.DialogUser}>
         <b>{props.message}</b>

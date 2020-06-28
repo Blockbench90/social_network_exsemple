@@ -22,7 +22,6 @@
 .AppProfile {
     grid-area: p;
     background: rgba(43, 171, 213, 1);
-    height: 800px;
     min-height: 110%;
 }
 

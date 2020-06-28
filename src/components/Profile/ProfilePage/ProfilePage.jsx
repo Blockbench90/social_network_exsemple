@@ -2,7 +2,7 @@ import React from "react";
 import style from "./ProfilePage.module.css";
 import ProfileInfo from "./ProfileInfo";
 import MyPostContainer from "./Myposts/MyPostContainer";
-import {Redirect} from "react-router-dom";
+import ProfileStatus from "./Myposts/ProfileStatus";
 
 
 const ProfilePage = (props) => {
@@ -10,6 +10,7 @@ const ProfilePage = (props) => {
         <div className={style.ProfilePageWrapper}>
             <div className={style.Container}>
                 <ProfileInfo profile={props.profile}/>
+
                 <div className={style.MyPostsWrapper}>
                    <MyPostContainer/>
                 </div>
