@@ -2,18 +2,27 @@ import React from "react";
 import style from "./MyPost.module.css";
 import avatar from "../../../../assets/images/logo.svg"
 import Post from "./Post/Post";
+import {Field, reduxForm} from "redux-form";
+
+
+const AddNewPostForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit} className={style.Input}>
+            <Field component='textarea' placeholder='input your text' name={'NewPostText'}/>
+            <button>Add Post</button>
+        </form>
+    )
+}
+let AddNewPostFormRedux = reduxForm({form: "ProfileAddNewPostForm"})(AddNewPostForm)
 
 const MyPost = (props) => {
-    let post = props.posts.map(p => <Post message={p.post}/>)
-    let newPostText = React.createRef();
+    let post = props.posts.map(p => <Post message={p.post} key={p.id}/>)
 
-    let addPost = () => {
-        props.addPost();
+
+    let onAddPost = (values) => {
+        props.addPost(values.NewPostText);
     }
-    let onPostChange = () => {
-        let text = newPostText.current.value;
-        props.onPostChange(text)
-    }
+
     return (
         <div className={style.Wrapper}>
             <div className={style.Container}>
@@ -21,10 +30,7 @@ const MyPost = (props) => {
                     <div>
                         <img className={style.Avatar} src={avatar} alt='logo'/>
                     </div>
-                    <div className={style.Input}>
-                        <textarea rows="1" cols="50" ref={newPostText} onChange={onPostChange} value={props.newPostText}/>
-                        <button onClick={addPost}>Add Post</button>
-                    </div>
+                    <AddNewPostFormRedux onSubmit={onAddPost}/>
                 </div>
                 <div className={style.Post}>
                     {post}
@@ -33,6 +39,5 @@ const MyPost = (props) => {
         </div>
     );
 };
-
 
 export default MyPost;

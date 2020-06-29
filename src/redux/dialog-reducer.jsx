@@ -1,4 +1,3 @@
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY'
 const SEND_MESSAGE = 'SEND-MESSAGE'
 // редбюсер -- это чистая функция, которая принимает стайт и экшен, если надо меняет стаей и возвращает новый
 let initialState =  {
@@ -14,21 +13,14 @@ let initialState =  {
         {id: 2, message: "Hallo"},
         {id: 3, message: "am glad"},
         {id: 4, message: " to see yuo"}
-    ],
-    newMessageBody: ''
+    ]
 }
 const dialogReducer = (state = initialState, action) => {
     switch (action.type) {
-        case UPDATE_NEW_MESSAGE_BODY:
-            return {
-                ...state,
-            newMessageBody: action.body,
-        }
         case  SEND_MESSAGE:{
-            let body = state.newMessageBody;
+            let body = action.newMessageBody;
             return {...state,
-                messages: [...state.messages, {id:6, message: body}],
-                newMessageBody: ''
+                messages: [...state.messages, {id:6, message: body}]
             }
         }
         default:
@@ -36,6 +28,5 @@ const dialogReducer = (state = initialState, action) => {
     }
 }
 
-export const updateNewMessageBodyActionCreator = (body) => ({type: UPDATE_NEW_MESSAGE_BODY, body: body})
-export const sendMessageActionCreator = () => ({type: SEND_MESSAGE})
+export const sendMessageActionCreator = (newMessageBody) => ({type: SEND_MESSAGE, newMessageBody})
 export default dialogReducer;
