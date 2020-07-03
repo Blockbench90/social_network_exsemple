@@ -16,13 +16,13 @@
 .AppNavbar {
     grid-area: n;
     height: 800px;
-    min-height: 110%;
+    min-height: 800px;
     background: rgba(59, 149, 201, 0.9);
 }
 .AppProfile {
     grid-area: p;
     background: rgba(43, 171, 213, 1);
-    min-height: 110%;
+    min-height: 800px;
 }
 
 

@@ -3,12 +3,14 @@ import style from "./MyPost.module.css";
 import avatar from "../../../../assets/images/logo.svg"
 import Post from "./Post/Post";
 import {Field, reduxForm} from "redux-form";
+import {maxLengthCreator, required} from "../../../../utils/validators";
+import {Textarea} from "../../../../common/FormControls/FormControls";
 
-
+const maxLength10 = maxLengthCreator(10)
 const AddNewPostForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit} className={style.Input}>
-            <Field component='textarea' placeholder='input your text' name={'NewPostText'}/>
+            <Field component={Textarea} validate={[required, maxLength10]} placeholder='input your text' name={'NewPostText'}/>
             <button>Add Post</button>
         </form>
     )
