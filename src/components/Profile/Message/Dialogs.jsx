@@ -35,7 +35,7 @@ const Dialogs = (props) => {
     let onSendMessageClick = (values) => {                    //при клике на кнопку, запустить диспатчь, и перезаписать значение onSubmit и с помощью редаксформ отправить в редьюсер
         props.sendMessage(values.newMessageBody)
     }
-    if(!props.isAuth) return <Redirect to='/login'/>
+    // if(!props.isAuth) return <Redirect to='/login'/>
     return (
         <div className={style.Wrapper}>
             <div className={style.Container}>
