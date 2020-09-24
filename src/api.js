@@ -35,7 +35,24 @@ export const authApi = {
                 'API-KEY': 'f0f287db-1451-40d2-ae8a-1a302f1200c2'
             }
         })
+    },
+    login(email, password, rememberMe) {
+        return axios.post(`https://social-network.samuraijs.com/api/1.0/auth/login`, {email, password, rememberMe}, {
+            withCredentials: true,
+            headers: {
+                'API-KEY': 'f0f287db-1451-40d2-ae8a-1a302f1200c2'
+            }
+        })
+    },
+    logout() {
+        return axios.delete(`https://social-network.samuraijs.com/api/1.0/auth/login`, {
+            withCredentials: true,
+            headers: {
+                'API-KEY': 'f0f287db-1451-40d2-ae8a-1a302f1200c2'
+            }
+        })
     }
+
 }
 export const profileApi = {
     getProfile (userId) {
