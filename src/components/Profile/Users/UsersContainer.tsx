@@ -10,16 +10,31 @@ import {
 } from "../../../redux/users-reducer";
 import Users from "./Users";
 import Preloader from "../../../common/Preloader/Preloader";
+import {UserType} from "../../../redux/type/type";
+import {AppStateType} from "../../../redux/redux-store";
 
+type PropsType = {
+    currentPage: number
+    pageSize: number
+    isFetching: boolean
+    totalUsersCount: number
+    users: Array<UserType>
+    follow: ()=> void
+    unfollow: ()=> void
+    followingInProgress: Array<number>
+    toggleFollowingProgress: () => void
+    unfollowTC: () => void
+    followTC: () => void
+    getUsers: (currentPage: number, pageSize: number) => void
+}
 
-
-class UsersContainer extends React.Component {
+class UsersContainer extends React.Component<PropsType> {
     componentDidMount() {
         this.props.getUsers(this.props.currentPage, this.props.pageSize)
 
     }
 
-    onPageChanged = (pageNumber) => {
+    onPageChanged = (pageNumber: number) => {
         this.props.getUsers(pageNumber, this.props.pageSize)
     }
 
@@ -43,7 +58,7 @@ class UsersContainer extends React.Component {
 }
 
 
-let mapStateToProps = (state) => {
+let mapStateToProps = (state: AppStateType) => {
     return {
         users: state.usersPage.users,
         pageSize: state.usersPage.pageSize,
@@ -58,3 +73,4 @@ const UserContainer = connect(mapStateToProps, {follow, unfollow, setUsers,
     setCurrentPage,setTotalUsersCount, toggleIsFetching,
     toggleFollowingProgress, getUsers, followTC, unfollowTC})(UsersContainer)
 export default UserContainer;
+//5 lesson 38 min
