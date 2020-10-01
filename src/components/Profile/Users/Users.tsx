@@ -5,7 +5,7 @@ import {NavLink} from "react-router-dom";
 import Paginator from "./Paginator";
 
 
-const Users = (props) => {
+const Users = (props: any) => {
     return (
         <div className={style.NavbarWrapper}>
             <div className={style.Container}>
@@ -13,7 +13,7 @@ const Users = (props) => {
                     <div className={style.buttonPage}>
                         <Paginator currentPage={props.currentPage} onPageChanged={props.onPageChanged} totalItemsCount={props.totalUsersCount} pageSize={props.pageSize}/>
                     </div>
-                    {props.users.map(user => <div key={user.id}>
+                    {props.users.map((user: any) => <div key={user.id}>
                             <div>
                                 <NavLink to={"profile/" + user.id}>
                                     <img src={user.photos.small != null ? user.photos.small : userPhoto} className={style.userPhoto}/>
@@ -22,9 +22,9 @@ const Users = (props) => {
                             </div>
                             <div>
                                 {user.followed ?
-                                    <button disabled={props.followingInProgress.some(id => id === user.id)}
+                                    <button disabled={props.followingInProgress.some((id: any) => id === user.id)}
                                             onClick={() => {props.unfollowTC(user.id)}}>Unfollow</button>
-                                    : <button disabled={props.followingInProgress.some(id => id === user.id)}
+                                    : <button disabled={props.followingInProgress.some((id: any) => id === user.id)}
                                               onClick={() => {props.followTC(user.id)}}>Follow</button>}
                             </div>
                             <span>
