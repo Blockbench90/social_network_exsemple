@@ -78,4 +78,3 @@ let mapStateToProps = (state: AppStateType): MapStatePropsType => {
 
 const UserContainer = connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(mapStateToProps, {follow, unfollow, toggleFollowingProgress, unfollowTC, followTC, getUsers  })(UsersContainer)
 export default UserContainer;
-//5 lesson 38 min
