@@ -1,7 +1,8 @@
 import React from "react";
 import style from "./FormControls.module.css"
-
-export const Textarea = ({input, meta, ...props}) => {
+import {WrappedFieldsProps} from "redux-form";
+//React.FC<WrappedFieldsProps> - собственная типизация из redux-form
+export const Textarea: React.FC<WrappedFieldsProps> = ({input, meta, ...props}): any => {
     const hasError = meta.touched && meta.error;
     return (
         <div className={style.formControl + ' ' + (hasError ? style.error : "")}>
@@ -10,7 +11,7 @@ export const Textarea = ({input, meta, ...props}) => {
         </div>
     )
 }
-export const Input = ({input, meta, ...props}) => {
+export const Input: React.FC<WrappedFieldsProps> = ({input, meta, ...props}) => {
     const hasError = meta.touched && meta.error;
     return (
         <div className={style.formControl + ' ' + (hasError ? style.error : "")}>
