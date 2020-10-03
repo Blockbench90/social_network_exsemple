@@ -78,7 +78,7 @@ export const getProfileStatus = (userId: number) => {
 }
 export const updateProfileStatus = (status: string) => {
     return (dispatch:any) => {
-        profileApi.updataStatus(status).then((response: any) => {
+        profileApi.updateStatus(status).then((response: any) => {
             if (response.data.resultCode === 0) {
             dispatch(setProfileStatus(response.data))
             }}

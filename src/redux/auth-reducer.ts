@@ -1,4 +1,4 @@
-import {authApi} from "../api";
+import {authApi, ResultCodeEnum} from "../api";
 
 const SET_USER_DATA = 'SET-USER-DATA'
 
@@ -35,7 +35,7 @@ export const setAuthUserData = (id: number | null, email: string | null, login: 
 
 export const getAuthUserData = () => (dispatch: any) => {
     authApi.me().then((response: any) => {
-        if (response.data.resultCode === 0) {
+        if (response.data.resultCode === ResultCodeEnum.Success) {
             let {id, email, login} = response.data.data
             dispatch(setAuthUserData(id, email, login, true))
         }
@@ -44,14 +44,14 @@ export const getAuthUserData = () => (dispatch: any) => {
 
 export const login = (email: string, password: string, rememberMe: boolean, isAuth:boolean = false) => (dispatch: any) => {
     authApi.login(email, password, rememberMe).then((response: any) => {
-        if (response.data.resultCode === 0) {
+        if (response.data.resultCode === ResultCodeEnum.Success) {
             dispatch(getAuthUserData())
         }
     })
 }
 export const logout = () => (dispatch: any) => {
     authApi.logout().then((response: any) => {
-        if (response.data.resultCode === 0) {
+        if (response.data.resultCode === ResultCodeEnum.Success) {
             dispatch(setAuthUserData(null, null, null, false))
         }
     })
